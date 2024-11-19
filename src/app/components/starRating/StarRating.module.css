@@ -1,0 +1,14 @@
+.star_rating {
+    display: flex;
+    justify-content: center;
+}
+
+.filled {
+    color: gold;
+    font-size: 14px;
+}
+
+.empty {
+    color: lightgray;
+    font-size: 14px;
+}

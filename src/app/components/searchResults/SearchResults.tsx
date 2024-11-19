@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
-import {options, urlBuilder} from "@/app/services/variables";
+import {urlBuilder} from "@/app/services/variables";
+import {options} from "@/app/services/options";
 import MoviesList from "@/app/components/(movies)/moviesList/MoviesList";
-import ShowsList from "@/app/components/(shows)/showsList/ShowsList";
+
 
 type SearchResultsProps = {
     query: string;
@@ -13,18 +14,8 @@ const SearchResults: FC<SearchResultsProps> = async ({ query }) => {
 
     return (
         <>
-            <h1>Search Results for "{query}"</h1>
-
+            <h1>Search Results for &quot;{query}&quot;</h1>
             <MoviesList movies={data.results} title={''}/>
-
-            {/*<ul>*/}
-            {/*    {data.results?.map((result: any) => (*/}
-            {/*        <li key={result.id}>*/}
-            {/*            {result.title || result.name}*/}
-            {/*        </li>*/}
-            {/*    ))}*/}
-            {/*</ul> */}
-
         </>
     );
 };

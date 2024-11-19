@@ -1,13 +1,13 @@
 import React from 'react';
 import {showService} from "@/app/services/api.shows.service";
-import ShowsList from "@/app/components/(shows)/showsList/ShowsList";
+import MoviesList from "@/app/components/(movies)/moviesList/MoviesList";
 
 const AllShows = async () => {
 
     const allShows = await showService.getShows();
     return (
         <>
-            <ShowsList shows={allShows.results} title={'All TV Shows'}/>
+            <MoviesList shows={allShows.results} title={'All Shows'}/>
         </>
     );
 };

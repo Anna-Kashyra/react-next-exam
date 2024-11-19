@@ -33,4 +33,6 @@ export const urlBuilder = {
     showsByGenre: (genreId: string) => `${baseUrl}/discover/tv?with_genres=${genreId}`,
 
     search: (query: string) => `${baseUrl}/search/multi?query=${encodeURIComponent(query)}`,
+
+    movieById: (id: string) => `${baseUrl}/movie/${id}`,
 }

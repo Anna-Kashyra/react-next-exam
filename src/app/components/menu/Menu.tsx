@@ -7,10 +7,10 @@ const Menu = () => {
         <div>
             <ul className={styles.menu}>
                 <li>
-                    <Link href={'movies'} className={styles.link}>Movies</Link>
+                    <Link href={'/movies'} className={styles.link}>Movies</Link>
                 </li>
                 <li>
-                    <Link href={'shows'} className={styles.link}>TV Shows</Link>
+                    <Link href={'/shows'} className={styles.link}>TV Shows</Link>
                 </li>
             </ul>
         </div>
