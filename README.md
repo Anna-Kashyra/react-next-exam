@@ -4,7 +4,7 @@ This is a Next.js project bootstrapped with `create-next-app`
 
 This is the final project from the training course React/Next.js.
 Tasks:
-- Create The Movies app using The Movie Database https://developers.themoviedb.org/3/discover/movie-discover
+- Create The Movies app using The MoviesListCard Database https://developers.themoviedb.org/3/discover/movie-discover
 - Perform changing the mode
 - Perform pagination
 - Perform routing

@@ -1,0 +1,25 @@
+.menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.link {
+    position: relative;
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    transform: translateX(-50%);
+    background-color: var(--background);
+    transition: all 0.3s ease-in-out;
+}
+
+.link:hover::after {
+    width: 100%;
+}

@@ -1,0 +1,15 @@
+.container {
+    width: 100%;
+}
+
+.title {
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.movie_list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: stretch;
+    flex-wrap: wrap;
+    gap: 30px;
+    list-style: none;
+}
+
+.items {
+    padding: 10px 20px;
+    background-color: var(--second-color);
+    border-radius: 20px;
+}
