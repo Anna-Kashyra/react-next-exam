@@ -1,12 +1,12 @@
 import React from 'react';
-import AllShows from "@/app/components/(shows)/allShows/AllShows";
-import ShowGenres from "@/app/components/(shows)/showGenres/ShowGenres";
+import AllShows from "@/app/components/allShows/AllShows";
+import Genres from "@/app/components/genres/Genres";
 
 
 const ShowsPage = async () => {
     return (
         <>
-            <ShowGenres/>
+            <Genres type={'show'}/>
             <AllShows/>
         </>
 

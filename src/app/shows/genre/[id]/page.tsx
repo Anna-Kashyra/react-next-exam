@@ -1,18 +1,15 @@
 import React from 'react';
-import ShowGenres from "@/app/components/(shows)/showGenres/ShowGenres";
-import ShowsByGenre from "@/app/components/(shows)/sowsByGenre/ShowsByGenre";
+import Genres from "@/app/components/genres/Genres";
+import MediaByGenre from "@/app/components/mediaByGenre/MediaByGenre";
 
 type Params = {
     params: { id: string };
 };
-
-const ShowsByGenrePage = async  ({ params }: Params) => {
+export default function ShowsByGenrePage ({ params }: Params) {
     return (
         <>
-            <ShowGenres/>
-            <ShowsByGenre genreId={params.id}/>
+            <Genres type={'show'}/>
+            <MediaByGenre type={'show'} genreId={params.id}/>
         </>
     );
 };
-
-export default ShowsByGenrePage;

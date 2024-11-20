@@ -13,7 +13,8 @@ type MoviesListProps = {
 const MoviesList = ({ movies, shows, title }: MoviesListProps) => {
 
     const mediaItems = movies || shows;
-    console.log(mediaItems);
+    console.log("Movies:", movies);
+    console.log("Shows:", shows);
 
     return (
         <div className={styles.container}>

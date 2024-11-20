@@ -1,11 +1,11 @@
 import React from 'react';
 import AllMovies from "@/app/components/(movies)/allMovies/AllMovies";
-import MovieGenres from "@/app/components/(movies)/movieGenres/MovieGenres";
+import Genres from "@/app/components/genres/Genres";
 
 const MoviesPage = () => {
     return (
         <>
-            <MovieGenres/>
+            <Genres type="movie" />
             <AllMovies/>
         </>
 

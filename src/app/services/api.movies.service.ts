@@ -33,6 +33,10 @@ const movieService = {
         return await fetch(urlBuilder.movieById(id), options)
             .then(value => value.json())
     }
+
+
 }
+
+
 
 export {movieService};

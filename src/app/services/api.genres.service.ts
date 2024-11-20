@@ -12,7 +12,6 @@ const genreService = {
         return await fetch(urlBuilder.movieGenres(), options)
             .then(response => response.json())
             .then((data: GenreResponse) => data.genres);
-
     },
 
 
@@ -22,5 +21,7 @@ const genreService = {
             .then((data: GenreResponse) => data.genres)
     }
 }
+
+
 
 export {genreService};

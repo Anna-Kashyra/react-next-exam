@@ -1,20 +1,17 @@
 import React from 'react';
-import MoviesByGenre from "@/app/components/(movies)/moviesByGenre/MoviesByGenre";
-import MovieGenres from "@/app/components/(movies)/movieGenres/MovieGenres";
+import Genres from "@/app/components/genres/Genres";
+import MediaByGenre from "@/app/components/mediaByGenre/MediaByGenre";
 
 type Params = {
     params: { id: string };
 };
-
-const MoviesByGenrePage = async  ({ params }: Params) => {
+export default function MoviesByGenrePage ({ params }: Params) {
+    console.log("Params ID:", params.id);
     return (
         <>
-            <MovieGenres/>
-            <MoviesByGenre genreId={params.id}/>
-            {/*<MoviesByGenre genreId={params.id}/>*/}
+            <Genres type={'movie'}/>
+            <MediaByGenre type={'movie'} genreId={params.id}/>
         </>
     );
 };
-
-export default MoviesByGenrePage;
 

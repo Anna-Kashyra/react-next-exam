@@ -36,3 +36,5 @@ export const urlBuilder = {
 
     movieById: (id: string) => `${baseUrl}/movie/${id}`,
 }
+
+
