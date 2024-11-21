@@ -35,6 +35,7 @@ export const urlBuilder = {
     search: (query: string) => `${baseUrl}/search/multi?query=${encodeURIComponent(query)}`,
 
     movieById: (id: string) => `${baseUrl}/movie/${id}`,
+    showById: (id: string) => `${baseUrl}/tv/${id}`
 }
 
 

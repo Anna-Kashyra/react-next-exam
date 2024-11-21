@@ -7,7 +7,7 @@ const AllShows = async () => {
     const allShows = await showService.getShows();
     return (
         <>
-            <MoviesList shows={allShows.results} title={'All Shows'}/>
+            <MoviesList shows={allShows.results} title={'All Shows'} type={'shows'}/>
         </>
     );
 };

@@ -1,7 +1,7 @@
 export interface IMovie {
 	adult: boolean;
 	backdrop_path: string;
-	genre_ids: number[];
+	genres?: IGenre[];
 	id: number;
 	original_language: string;
 	original_title: string;
@@ -10,7 +10,13 @@ export interface IMovie {
 	poster_path: string;
 	release_date: string;
 	title: string;
+	runtime?: string;
 	video: boolean;
 	vote_average: number;
 	vote_count: number;
+}
+
+interface IGenre {
+	id: number;
+	name: string
 }

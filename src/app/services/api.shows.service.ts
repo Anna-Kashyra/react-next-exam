@@ -13,6 +13,11 @@ const showService = {
         return await fetch(urlBuilder.showsByGenre(genreId), options)
             .then(response => response.json())
     },
+
+    getShowById: async (id: string): Promise<IShow> => {
+        return await fetch(urlBuilder.showById(id), options)
+            .then(value => value.json())
+    }
 }
 
 export {showService};

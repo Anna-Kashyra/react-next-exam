@@ -7,7 +7,7 @@ const UpcomingMovies = async () => {
     const upcomingMovies = await movieService.getUpcomingMovies();
     return (
         <>
-            <MoviesList movies={upcomingMovies.results} title={'Coming soon'}/>
+            <MoviesList movies={upcomingMovies.results} title={'Coming soon'} type={'movies'}/>
         </>
     );
 };

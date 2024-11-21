@@ -1,7 +1,7 @@
 export interface IShow {
 	adult: boolean;
 	backdrop_path: string;
-	genre_ids: number[];
+	genres?: IGenre[];
 	id: number;
 	origin_country: string[];
 	original_language: string;
@@ -11,6 +11,12 @@ export interface IShow {
 	poster_path: string;
 	first_air_date: string;
 	name: string;
+	tagline?: string;
 	vote_average: number;
 	vote_count: number;
+}
+
+interface IGenre {
+	id: number;
+	name: string
 }

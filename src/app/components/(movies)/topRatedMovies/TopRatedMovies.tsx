@@ -7,7 +7,7 @@ const TopRatedMovies = async () => {
     const topRatedMovies = await movieService.getTopRatedMovies();
     return (
         <>
-            <MoviesList movies={topRatedMovies.results} title={'Top Rated Movies'}/>
+            <MoviesList movies={topRatedMovies.results} title={'Top Rated Movies'} type={'movies'}/>
         </>
     );
 };

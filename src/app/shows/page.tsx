@@ -6,10 +6,9 @@ import Genres from "@/app/components/genres/Genres";
 const ShowsPage = async () => {
     return (
         <>
-            <Genres type={'show'}/>
+            <Genres type={'shows'}/>
             <AllShows/>
         </>
-
     );
 };
 

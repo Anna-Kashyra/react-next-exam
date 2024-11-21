@@ -5,7 +5,7 @@ import Genres from "@/app/components/genres/Genres";
 const MoviesPage = () => {
     return (
         <>
-            <Genres type="movie" />
+            <Genres type="movies" />
             <AllMovies/>
         </>
 

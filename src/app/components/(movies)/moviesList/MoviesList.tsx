@@ -12,23 +12,44 @@ type MoviesListProps = {
 
 const MoviesList = ({ movies, shows, title }: MoviesListProps) => {
 
-    const mediaItems = movies || shows;
-    console.log("Movies:", movies);
-    console.log("Shows:", shows);
+    const mediaItems = [
+        ...(movies?.map((movie) => ({
+            ...movie,
+            type: 'movies' as const,
+        })) || []),
+        ...(shows?.map((show) => ({
+            ...show,
+            type: 'shows' as const,
+        })) || []),
+    ];
 
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>{title}</h2>
             <div className={styles.movie_list}>
-                {mediaItems?.map((item) => (
-                    <MoviesListCard
-                        key={item.id}
-                        id={item.id}
-                        poster_path={item.poster_path}
-                        title={'title' in item ? item.title : item.name}
-                        vote_average={item.vote_average}
-                    />
-                ))}
+                {mediaItems.map((item) =>
+                    item.type === 'movies' ? (
+                        <MoviesListCard
+                            key={item.id}
+                            id={item.id}
+                            poster_path={item.poster_path}
+                            vote_average={item.vote_average}
+                            genres={item.genres}
+                            type="movies"
+                            title={item.title}
+                        />
+                    ) : (
+                        <MoviesListCard
+                            key={item.id}
+                            id={item.id}
+                            poster_path={item.poster_path}
+                            vote_average={item.vote_average}
+                            genres={item.genres}
+                            type="shows"
+                            name={item.name}
+                        />
+                    )
+                )}
             </div>
         </div>
     );

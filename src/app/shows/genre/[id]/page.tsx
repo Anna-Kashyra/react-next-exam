@@ -5,11 +5,12 @@ import MediaByGenre from "@/app/components/mediaByGenre/MediaByGenre";
 type Params = {
     params: { id: string };
 };
-export default function ShowsByGenrePage ({ params }: Params) {
+export default async function ShowsByGenrePage ({ params }: Params) {
+    const genreId = params.id;
     return (
         <>
-            <Genres type={'show'}/>
-            <MediaByGenre type={'show'} genreId={params.id}/>
+            <Genres type={'shows'}/>
+            <MediaByGenre type={'shows'} genreId={genreId}/>
         </>
     );
 };
