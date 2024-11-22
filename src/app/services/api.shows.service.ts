@@ -2,10 +2,11 @@ import {urlBuilder} from "@/app/services/variables";
 import {options} from "@/app/services/options";
 import {IBaseResponse} from "@/app/models/IBaseResponse";
 import {IShow} from "@/app/models/IShow";
+import {GetMediasParams} from "@/app/models/PaginationProps";
 
 const showService = {
-    getShows: async (): Promise<IBaseResponse & {results: IShow[]}> => {
-        return await fetch(urlBuilder.allShows(), options)
+    getShows: async ({ page = 1 }: GetMediasParams): Promise<IBaseResponse & {results: IShow[]}> => {
+        return await fetch(urlBuilder.allShows(page), options)
             .then(value => value.json());
     },
 

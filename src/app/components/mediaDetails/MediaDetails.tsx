@@ -3,6 +3,7 @@ import { IMovie } from "@/app/models/IMovie";
 import { IShow } from "@/app/models/IShow";
 import {baseImgUrl} from "@/app/services/variables";
 import Image from "next/image";
+import styles from "@/app/components/mediaDetails/MediaDetails.module.css";
 
 type MediaDetailsProps = {
     media: IMovie | IShow;
@@ -14,20 +15,23 @@ const MediaDetails = ({ media }: MediaDetailsProps) => {
     const imageUrl = `${baseImgUrl}w500/${media.poster_path}`
 
     return (
-        <div>
-            <h1>{title}</h1>
+        <article className={styles.container}>
             <Image src={imageUrl} alt={title} width={500} height={750}/>
-            <p>{media.overview || 'Description not available.'}</p>
-            <p>Release Date: {releaseDate || 'Unknown'}</p>
-            <p>Rating: {media.vote_average || 'Not rated'} / 10 </p>
-            <p> {('genres' in media && media.genres?.length)
-                ? `Genres: ${media.genres.map((genre) => genre.name).join(', ')}`
-                : 'Genres not available.'}</p>
-            <p>Duration: {'runtime' in media ? media.runtime : 'No Data'} minutes</p>
-            <p>Tagline: {'tagline' in media ? media.tagline : 'No Data'}</p>
-            <p>Budget: {'budget' in media ? `$${media.budget}` : 'No Data'}</p>
-            <p>Revenue: {'revenue' in media ? `$${media.revenue}` : 'No Data'}</p>
-        </div>
+            <div className={styles.description}>
+                <div className={styles.date_rating}>
+                    <p>Release Date: {releaseDate || 'Unknown'}</p>
+                    <p>Rating: {media.vote_average || 'Not rated'} / 10 </p>
+                </div>
+                <p>{media.overview || 'Description not available.'}</p>
+                <p> {('genres' in media && media.genres?.length)
+                    ? `Genres: ${media.genres.map((genre) => genre.name).join(', ')}`
+                    : 'Genres not available.'}</p>
+                <p>Duration: {'runtime' in media ? media.runtime : 'No Data'} minutes</p>
+                <p>Tagline: {'tagline' in media ? media.tagline : 'No Data'}</p>
+                <p>Budget: {'budget' in media ? `$${media.budget}` : 'No Data'}</p>
+                <p>Revenue: {'revenue' in media ? `$${media.revenue}` : 'No Data'}</p>
+            </div>
+        </article>
     );
 };
 

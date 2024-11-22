@@ -13,7 +13,15 @@ const MediaDetailsPage = async ({ params }: MediaDetailsProps) => {
     if (!media) {
         return <div>Movie not found</div>;
     }
-    return <MediaDetails media={media} />;
+
+    const title =media.title;
+
+    return (
+            <>
+                <h1>{title}</h1>
+                <MediaDetails media={media} />
+            </>
+        );
 };
 
 export default MediaDetailsPage;

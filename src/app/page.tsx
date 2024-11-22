@@ -6,6 +6,7 @@ import UpcomingMovies from "@/app/components/(movies)/upcomingMovies/UpcomingMov
 export default function Home  () {
     return (
         <main className={styles.main}>
+            <h1>The largest database of the best movies and TV shows</h1>
             <PopularMovies/>
             <UpcomingMovies/>
             <TopRatedMovies/>

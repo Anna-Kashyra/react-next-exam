@@ -14,6 +14,7 @@ export interface IMovie {
 	video: boolean;
 	vote_average: number;
 	vote_count: number;
+	media_type?: string;
 }
 
 interface IGenre {

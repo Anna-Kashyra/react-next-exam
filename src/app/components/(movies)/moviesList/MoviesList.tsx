@@ -7,10 +7,9 @@ import {IShow} from "@/app/models/IShow";
 type MoviesListProps = {
     movies?: IMovie[];
     shows?: IShow[];
-    title: string;
 };
 
-const MoviesList = ({ movies, shows, title }: MoviesListProps) => {
+const MoviesList = ({ movies, shows }: MoviesListProps) => {
 
     const mediaItems = [
         ...(movies?.map((movie) => ({
@@ -25,7 +24,6 @@ const MoviesList = ({ movies, shows, title }: MoviesListProps) => {
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>{title}</h2>
             <div className={styles.movie_list}>
                 {mediaItems.map((item) =>
                     item.type === 'movies' ? (

@@ -7,8 +7,6 @@ import Link from "next/link";
 import {IMovie} from "@/app/models/IMovie";
 import {IShow} from "@/app/models/IShow";
 
-// type CardProps = (IMovie & { type: 'movies' }) | (IShow & { type: 'shows' });
-
 type CardProps = Pick<IMovie, 'id' | 'poster_path' | 'title' | 'vote_average' | 'genres'> & { type: 'movies' } |
     Pick<IShow, 'id' | 'poster_path' | 'name' | 'vote_average' | 'genres'> & { type: 'shows' };
 

@@ -19,12 +19,12 @@ export const genresUrl = {
 }
 
 export const urlBuilder = {
-    allMovies: () => baseUrl + moviesUrl.allMoviesUrl,
+    allMovies: (page: number) => `${baseUrl}${moviesUrl.allMoviesUrl}?page=${page}`,
     popularMovies: () => baseUrl + moviesUrl.popularMoviesUrl,
     topRatedMovies: () => baseUrl + moviesUrl.topRatedMoviesUrl,
     upcomingMovies: () => baseUrl + moviesUrl.upcomingMoviesUrl,
 
-    allShows: () => baseUrl + showsUrl.allShowsUrl,
+    allShows: (page: number) => `${baseUrl}${showsUrl.allShowsUrl}?page=${page}`,
 
     movieGenres: () => baseUrl + genresUrl.movieGenresUrl,
     showGenres: () => baseUrl + genresUrl.showGenresUrl,
