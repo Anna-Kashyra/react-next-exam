@@ -1,0 +1,36 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modal button {
+    margin: 10px;
+    padding: 5px 15px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--second-color);
+    color: var(--foreground);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.modal button:hover {
+    background-color: var(--background);
+    color: var(--foreground);
+}

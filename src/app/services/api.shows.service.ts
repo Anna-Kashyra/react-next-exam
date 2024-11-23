@@ -10,10 +10,11 @@ const showService = {
             .then(value => value.json());
     },
 
-    getShowsByGenre: async (genreId: string): Promise<IBaseResponse & {results: IShow[]}> => {
-        return await fetch(urlBuilder.showsByGenre(genreId), options)
-            .then(response => response.json())
+    getShowsByGenre: async (genreId: string, page = 1): Promise<IBaseResponse & {results: IShow[]}> => {
+        return await fetch(urlBuilder.showsByGenre(genreId, page), options)
+            .then(value => value.json())
     },
+
 
     getShowById: async (id: string): Promise<IShow> => {
         return await fetch(urlBuilder.showById(id), options)
@@ -22,3 +23,4 @@ const showService = {
 }
 
 export {showService};
+showService.getShowsByGenre("80", 1).then(data => console.log(data));

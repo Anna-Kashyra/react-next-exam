@@ -1,7 +1,7 @@
 .container {
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
+    gap: 40px;
+    align-items: start;
 }
 
 .description p {
@@ -11,4 +11,23 @@
 .date_rating {
     display: flex;
     gap: 60px;
+}
+
+.date_rating span, .genres span, .production span,
+.duration span, .budget span, .revenue span {
+    font-size: 20px;
+    text-decoration: underline #9b14d5;
+    text-underline-offset: 5px;
+}
+
+.overview p:first-child {
+    font-size: 20px;
+    margin-bottom: 0.4rem;
+    text-decoration: underline #9b14d5;
+    text-underline-offset: 5px;
+}
+
+.tagline {
+    font-size: 28px;
+    opacity: 0.7;
 }

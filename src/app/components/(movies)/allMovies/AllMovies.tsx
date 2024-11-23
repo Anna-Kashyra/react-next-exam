@@ -1,7 +1,7 @@
-import React from 'react';
-import {movieService} from "@/app/services/api.movies.service";
+import React from "react";
 import MoviesList from "@/app/components/(movies)/moviesList/MoviesList";
-import Pagination from "@/app/components/pagination/Pagination";
+import Pagination from "@/app/components/(navigation)/pagination/Pagination";
+import {movieService} from "@/app/services/api.movies.service";
 import {AllMediasProps} from "@/app/models/PaginationProps";
 
 const AllMovies = async ({ currentPage }: AllMediasProps) => {

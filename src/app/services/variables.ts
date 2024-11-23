@@ -29,8 +29,8 @@ export const urlBuilder = {
     movieGenres: () => baseUrl + genresUrl.movieGenresUrl,
     showGenres: () => baseUrl + genresUrl.showGenresUrl,
 
-    moviesByGenre: (genreId: string) => `${baseUrl}/discover/movie?with_genres=${genreId}`,
-    showsByGenre: (genreId: string) => `${baseUrl}/discover/tv?with_genres=${genreId}`,
+    moviesByGenre: (genreId: string, page: number) => `${baseUrl}/discover/movie?with_genres=${genreId}&page=${page}`,
+    showsByGenre: (genreId: string, page: number) => `${baseUrl}/discover/tv?with_genres=${genreId}&page=${page}`,
 
     search: (query: string) => `${baseUrl}/search/multi?query=${encodeURIComponent(query)}`,
 

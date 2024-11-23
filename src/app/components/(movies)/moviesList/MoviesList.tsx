@@ -1,8 +1,8 @@
-import React from 'react';
-import {IMovie} from "@/app/models/IMovie";
+import React from "react";
 import MoviesListCard from "@/app/components/(movies)/moviesListCard/MoviesListCard";
-import styles from '@/app/components/(movies)/moviesList/MoviesList.module.css';
+import {IMovie} from "@/app/models/IMovie";
 import {IShow} from "@/app/models/IShow";
+import styles from '@/app/components/(movies)/moviesList/MoviesList.module.css';
 
 type MoviesListProps = {
     movies?: IMovie[];
@@ -25,29 +25,9 @@ const MoviesList = ({ movies, shows }: MoviesListProps) => {
     return (
         <div className={styles.container}>
             <div className={styles.movie_list}>
-                {mediaItems.map((item) =>
-                    item.type === 'movies' ? (
-                        <MoviesListCard
-                            key={item.id}
-                            id={item.id}
-                            poster_path={item.poster_path}
-                            vote_average={item.vote_average}
-                            genres={item.genres}
-                            type="movies"
-                            title={item.title}
-                        />
-                    ) : (
-                        <MoviesListCard
-                            key={item.id}
-                            id={item.id}
-                            poster_path={item.poster_path}
-                            vote_average={item.vote_average}
-                            genres={item.genres}
-                            type="shows"
-                            name={item.name}
-                        />
-                    )
-                )}
+                {mediaItems.map((item) => (
+                    <MoviesListCard key={item.id} media={item}/>
+                ))}
             </div>
         </div>
     );

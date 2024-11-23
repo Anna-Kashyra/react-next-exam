@@ -1,0 +1,15 @@
+.login_button {
+    padding: 5px 15px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--foreground);
+    color: var(--second-color);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.login_button:hover {
+    background-color: var(--background);
+    color: var(--foreground);
+}

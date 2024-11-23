@@ -1,0 +1,15 @@
+.pagination {
+    text-align: center;
+    font-size: 20px;
+}
+
+.pages {
+    padding: 0 20px;
+}
+
+.pagination_button {
+    background-color: var(--second-color);
+    padding: 2px 15px;
+    border-radius: 20px;
+    font-size: 32px;
+}

@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+}
+
+.items {
+    padding: 7px 15px;
+    background-color: var(--second-color);
+    border-radius: 20px;
+    transition: color 0.3s;
+}
+
+.items:hover {
+    color: var(--background);
+}

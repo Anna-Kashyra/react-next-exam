@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './StarRating.module.css';
+import React from "react";
+import styles from "@/app/components/starRating/StarRating.module.css";
 
 type StarRatingProps = {
     vote_average: number;

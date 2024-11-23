@@ -25,8 +25,8 @@ const movieService = {
             .then(value => value.json());
     },
 
-    getMoviesByGenre: async (genreId: string): Promise<IBaseResponse & {results: IMovie[]}> => {
-        return await fetch(urlBuilder.moviesByGenre(genreId), options)
+    getMoviesByGenre: async (genreId: string, page = 1): Promise<IBaseResponse & {results: IMovie[]}> => {
+        return await fetch(urlBuilder.moviesByGenre(genreId, page), options)
             .then(value => value.json())
     },
 

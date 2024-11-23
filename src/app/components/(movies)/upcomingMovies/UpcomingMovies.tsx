@@ -1,13 +1,15 @@
-import React from 'react';
+import React from "react";
 import {movieService} from "@/app/services/api.movies.service";
 import MoviesList from "@/app/components/(movies)/moviesList/MoviesList";
+import styles from "@/app/components/(movies)/popularMovies/PopularMovies.module.css";
 
 const UpcomingMovies = async () => {
 
     const upcomingMovies = await movieService.getUpcomingMovies();
     return (
         <>
-            <MoviesList movies={upcomingMovies.results} title={'Coming soon'} type={'movies'}/>
+            <h2 className={styles.title}>Coming soon</h2>
+            <MoviesList movies={upcomingMovies.results}/>
         </>
     );
 };

@@ -11,8 +11,8 @@ type SearchResponse = {
     results: (IMovie | IShow | IPerson)[];
 }
 const searchService = {
-    getSearchResults: async (query: string): Promise<SearchResponse> => {
-        return await fetch(urlBuilder.search(query), options)
+    getSearchResults: async (query: string, page: number = 1): Promise<SearchResponse> => {
+        return await fetch(`${urlBuilder.search(query)}&page=${page}`, options)
             .then(value => value.json());
     }
 }

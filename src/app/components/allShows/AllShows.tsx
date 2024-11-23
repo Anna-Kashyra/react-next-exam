@@ -1,8 +1,8 @@
-import React from 'react';
-import {showService} from "@/app/services/api.shows.service";
+import React from "react";
 import MoviesList from "@/app/components/(movies)/moviesList/MoviesList";
-import Pagination from "@/app/components/pagination/Pagination";
+import Pagination from "@/app/components/(navigation)/pagination/Pagination";
 import {AllMediasProps} from "@/app/models/PaginationProps";
+import {showService} from "@/app/services/api.shows.service";
 
 const AllShows = async ({ currentPage }: AllMediasProps) => {
 

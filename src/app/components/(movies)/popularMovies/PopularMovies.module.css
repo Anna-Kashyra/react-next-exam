@@ -1,0 +1,6 @@
+.title {
+    background-color: var(--second-color);
+    padding: 7px 15px;
+    border-radius: 20px;
+    display: inline-block;
+}

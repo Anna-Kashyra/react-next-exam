@@ -15,9 +15,15 @@ export interface IShow {
 	vote_average: number;
 	vote_count: number;
 	media_type?: string;
+	production_countries: ICountries[];
 }
 
 interface IGenre {
 	id: number;
 	name: string
+}
+
+interface ICountries {
+	iso_3166_1: string;
+	name: string;
 }
