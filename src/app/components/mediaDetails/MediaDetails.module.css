@@ -4,6 +4,12 @@
     align-items: start;
 }
 
+.image_wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 400 / 600;
+}
+
 .description p {
     margin-bottom: 20px;
 }

@@ -9,7 +9,7 @@ const PopularMovies = async () => {
     return (
         <>
             <h2 className={styles.title}>Popular Movies</h2>
-            <MoviesList movies={popularMovies.results}/>
+            <MoviesList movies={popularMovies.results} />
         </>
     );
 };

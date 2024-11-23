@@ -10,16 +10,24 @@ type MediaDetailsProps = {
     media: IMovie | IShow;
 };
 
+const isShow = (media: IMovie | IShow): media is IShow => {
+    return 'first_air_date' in media;
+};
+
 const MediaDetails = ({ media }: MediaDetailsProps) => {
     const title = 'title' in media ? media.title : media.name;
-    const releaseDate = 'release_date' in media ? media.release_date : media.first_air_date;
+    const releaseDate = isShow(media) ? media.first_air_date : media.release_date;
     const imageUrl = media.poster_path
         ? `${baseImgUrl}w500/${media.poster_path}`
         : Placeholder;
 
     return (
         <article className={styles.container}>
-            <Image src={imageUrl} alt={title} width={500} height={750} />
+            <div className={styles.image_wrapper}>
+                <Image src={imageUrl} alt={title} fill
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw" />
+            </div>
+
             <div className={styles.description}>
                 <div className={styles.date_rating}>
                     <p><span>Release Date: </span> {releaseDate || 'Unknown'}</p>

@@ -6,7 +6,7 @@ import styles from "@/app/page.module.css";
 
 export const metadata: Metadata = {
   title: "The Best Movies",
-  description: "Popular movies and series online",
+  description: "Popular Movies and TV Shows online",
 };
 
 export default function RootLayout({

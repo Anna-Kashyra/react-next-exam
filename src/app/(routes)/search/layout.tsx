@@ -3,12 +3,12 @@ import {Metadata} from "next";
 import styles from "@/app/page.module.css";
 
 export const metadata: Metadata = {
-    title: "Movies | The Best Movies",
-    description: "Explore the best movies from all genres and categories.",
+    title: "Search | The Best Movies",
+    description: "Search for your favorite movies and TV shows.",
 }
 
 type Props = { children: React.ReactNode };
-const MoviesLayout = ({children}: Props) => {
+const SearchLayout = ({children}: Props) => {
     return (
         <main className={styles.main}>
             {children}
@@ -16,4 +16,4 @@ const MoviesLayout = ({children}: Props) => {
     );
 };
 
-export default MoviesLayout;
+export default SearchLayout;

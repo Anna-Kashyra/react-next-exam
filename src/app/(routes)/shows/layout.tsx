@@ -3,11 +3,12 @@ import {Metadata} from "next";
 import styles from "@/app/page.module.css";
 
 export const metadata: Metadata = {
-    title: 'SerialsLayout metadata'
+    title: "TV Shows | The Best Movies",
+    description: "Explore the best TV shows from all genres and categories.",
 }
 
 type Props = { children: React.ReactNode };
-const SerialsLayout = ({children}: Props) => {
+const ShowsLayout = ({children}: Props) => {
     return (
         <main className={styles.main}>
             {children}
@@ -15,4 +16,4 @@ const SerialsLayout = ({children}: Props) => {
     );
 };
 
-export default SerialsLayout;
+export default ShowsLayout;

@@ -18,8 +18,8 @@ const MoviesListCard = ({ media }: CardProps) => {
         ? `${baseImgUrl}w185/${media.poster_path}`
         : Placeholder;
 
-    const genresBadge = media.genres && media.genres.length > 0
-        ? media.genres.map((genre) => genre.name).join(', ')
+    const genresBadge = media.genre_ids && media.genre_ids.length > 0
+        ? media.genre_ids.map((genre) => genre).join(', ')
         : 'No genres';
 
     const mediaType = 'title' in media ? 'movies' : 'shows';
@@ -27,10 +27,13 @@ const MoviesListCard = ({ media }: CardProps) => {
 
     return (
         <Link href={`/${mediaType === 'movies' ? 'movies' : 'shows'}/${mediaId}`} className={styles.container}>
-            <div className={styles.genresBadge}>
+            <div className={styles.genres_badge}>
                 {genresBadge}
             </div>
-            <Image src={imageUrl} alt={title} width={185} height={270}/>
+            <div className={styles.image_wrapper}>
+                <Image src={imageUrl} alt={title} fill
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"/>
+            </div>
             <div className={styles.description}>
                 <h3 className={styles.title}>{title}</h3>
                 <StarRating vote_average={media.vote_average}/>

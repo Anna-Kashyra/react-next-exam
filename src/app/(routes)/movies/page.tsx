@@ -8,8 +8,8 @@ const MoviesPage = ({ searchParams }: SearchParamsProps) => {
     const currentPage = parseInt(searchParams.page || "1", 10);
     return (
         <>
-            <Genres type="movies" />
             <h1>All Movies</h1>
+            <Genres type="movies"/>
             <AllMovies currentPage={currentPage}/>
         </>
 

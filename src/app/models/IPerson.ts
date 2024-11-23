@@ -8,6 +8,7 @@ export interface IPerson {
 	popularity: number;
 	profile_path: string;
 	known_for: IKnownFor[];
+	media_type?: string;
 }
 export interface IKnownFor {
 	backdrop_path: string;

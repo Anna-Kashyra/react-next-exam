@@ -4,21 +4,23 @@ import {IBaseResponse} from "@/app/models/IBaseResponse";
 import {IShow} from "@/app/models/IShow";
 import {GetMediasParams} from "@/app/models/PaginationProps";
 
+const fetchShowsData = async (url: string): Promise<IBaseResponse & { results: IShow[] }> => {
+    const response = await fetch(url, options);
+    return await response.json();
+};
+
 const showService = {
-    getShows: async ({ page = 1 }: GetMediasParams): Promise<IBaseResponse & {results: IShow[]}> => {
-        return await fetch(urlBuilder.allShows(page), options)
-            .then(value => value.json());
+    getShows: async ({ page = 1 }: GetMediasParams): Promise<IBaseResponse & { results: IShow[] }> => {
+        return fetchShowsData(urlBuilder.allShows(page));
     },
 
-    getShowsByGenre: async (genreId: string, page = 1): Promise<IBaseResponse & {results: IShow[]}> => {
-        return await fetch(urlBuilder.showsByGenre(genreId, page), options)
-            .then(value => value.json())
+    getShowsByGenre: async (genreId: string, page = 1): Promise<IBaseResponse & { results: IShow[] }> => {
+        return fetchShowsData(urlBuilder.showsByGenre(genreId, page));
     },
-
 
     getShowById: async (id: string): Promise<IShow> => {
-        return await fetch(urlBuilder.showById(id), options)
-            .then(value => value.json())
+        const response = await fetch(urlBuilder.showById(id), options);
+        return await response.json();
     }
 }
 

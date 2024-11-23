@@ -18,7 +18,7 @@ const SearchResults: FC<SearchResultsProps> = async ({ query, page }) => {
     const movies = data.results.filter((item) => item.media_type === "movie") as IMovie[];
     const shows = data.results.filter((item) => item.media_type === "tv") as IShow[];
 
-    const basePath = `/search?query=${encodeURIComponent(query)}`;
+    const basePath = `/search?${new URLSearchParams({ query })}`;
 
     return (
         <>

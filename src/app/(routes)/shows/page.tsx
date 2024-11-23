@@ -8,8 +8,8 @@ const ShowsPage = async ({ searchParams }: SearchParamsProps) => {
     const currentPage = parseInt(searchParams.page || "1", 10);
     return (
         <>
-            <Genres type={'shows'}/>
             <h1>All TV Shows</h1>
+            <Genres type={'shows'}/>
             <AllShows currentPage={currentPage}/>
         </>
     );
