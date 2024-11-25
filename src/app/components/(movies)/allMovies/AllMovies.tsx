@@ -8,10 +8,10 @@ const AllMovies = async ({ currentPage }: AllMediasProps) => {
 
     const allMovies = await movieService.getMovies({ page: currentPage });
     return (
-        <>
+        <div>
             <MoviesList movies={allMovies.results}/>
             <Pagination currentPage={currentPage} totalPages={allMovies.total_pages} basePath="/movies"/>
-        </>
+        </div>
     );
 };
 

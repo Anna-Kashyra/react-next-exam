@@ -4,12 +4,14 @@ import type { Metadata } from "next";
 
 type GenreLayoutProps = {
     children: React.ReactNode;
-    params: { id: string };
+    params: Promise<{ id: string }>;
 };
 
 export async function generateMetadata({ params }: GenreLayoutProps): Promise<Metadata> {
+
     const genres = await genreService.getShowsGenres();
-    const currentGenre = genres.find((genre) => genre.id.toString() === params.id);
+    const { id } = await params;
+    const currentGenre = genres.find((genre) => genre.id.toString() === id);
 
     return {
         title: currentGenre
@@ -22,8 +24,10 @@ export async function generateMetadata({ params }: GenreLayoutProps): Promise<Me
 }
 
 const ShowsGenreLayout = async ({ children, params }: GenreLayoutProps) => {
+
     const genres = await genreService.getShowsGenres();
-    const currentGenre = genres.find((genre) => genre.id.toString() === params.id);
+    const { id } = await params;
+    const currentGenre = genres.find((genre) => genre.id.toString() === id);
 
     if (!currentGenre) {
         return <div>Genre not found</div>;

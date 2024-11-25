@@ -7,10 +7,10 @@ const UpcomingMovies = async () => {
 
     const upcomingMovies = await movieService.getUpcomingMovies();
     return (
-        <>
+        <div className={styles.container}>
             <h2 className={styles.title}>Coming soon</h2>
             <MoviesList movies={upcomingMovies.results}/>
-        </>
+        </div>
     );
 };
 

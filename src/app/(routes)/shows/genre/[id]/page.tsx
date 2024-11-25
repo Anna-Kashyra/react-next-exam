@@ -4,19 +4,20 @@ import MediaByGenre from "@/app/components/(genres)/mediaByGenre/MediaByGenre";
 import {SearchParamsProps} from "@/app/models/PaginationProps";
 
 type Params = {
-    params: { id: string };
+    params: Promise<{ id: string }>;
 };
 type CombinedParams = SearchParamsProps & Params;
 
 export default async function ShowsByGenrePage ({ searchParams, params }: CombinedParams) {
 
-    const currentPage = parseInt(searchParams.page || "1", 10);
-    const genreId = params.id;
+    const { id } = await params;
+    const { page } = await searchParams;
+    const currentPage = parseInt(page || "1", 10);
 
     return (
         <>
             <Genres type={'shows'}/>
-            <MediaByGenre type={'shows'} genreId={genreId} currentPage={currentPage}/>
+            <MediaByGenre type={'shows'} genreId={id} currentPage={currentPage}/>
         </>
     );
 };

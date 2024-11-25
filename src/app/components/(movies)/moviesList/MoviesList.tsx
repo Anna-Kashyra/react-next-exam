@@ -3,9 +3,6 @@ import MoviesListCard from "@/app/components/(movies)/moviesListCard/MoviesListC
 import {IMovie} from "@/app/models/IMovie";
 import {IShow} from "@/app/models/IShow";
 import styles from '@/app/components/(movies)/moviesList/MoviesList.module.css';
-import {genreService} from "@/app/services/api.genres.service";
-import {createGenreMap} from "@/app/helpers/genreMap";
-import {GetServerSideProps} from "next";
 
 type MoviesListProps = {
     movies?: IMovie[];
@@ -33,23 +30,6 @@ const MoviesList = ({ movies, shows }: MoviesListProps) => {
             </div>
     );
 };
-
-// export const getServerSideProps: GetServerSideProps = async () => {
-//     const [movieGenres, showGenres] = await Promise.all([
-//         genreService.getMovieGenres(),
-//         genreService.getShowsGenres(),
-//     ]);
-//
-//     const movieGenreMap = createGenreMap(movieGenres);
-//     const showGenreMap = createGenreMap(showGenres);
-//
-//     return {
-//         props: {
-//             movieGenreMap: Object.fromEntries(movieGenreMap), // Передаємо як об'єкт для JSON-сумісності
-//             showGenreMap: Object.fromEntries(showGenreMap),
-//         },
-//     };
-// };
 
 export default MoviesList;
 

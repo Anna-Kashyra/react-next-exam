@@ -4,18 +4,11 @@ import styles from "@/app/components/(auth)/authModal/AuthModul.module.css";
 type AuthModalProps = {
     isOpen: boolean;
     onClose: () => void;
-    onLogin: (user: { avatar: string }) => void;
+    onSignIn: () => void;
 };
 
-const AuthModal: FC<AuthModalProps> = ({ isOpen, onClose, onLogin }) => {
+const AuthModal: FC<AuthModalProps> = ({ isOpen, onClose, onSignIn }) => {
     if (!isOpen) return null;
-
-    const handleLogin = () => {
-        // Імітуємо авторизацію
-        const user = { avatar: "/default-avatar.png" }; // Замінити на реальний виклик API
-        onLogin(user);
-        onClose();
-    };
 
     const handleBackgroundClick = (event: React.MouseEvent) => {
         if (event.target === event.currentTarget) {
@@ -24,11 +17,11 @@ const AuthModal: FC<AuthModalProps> = ({ isOpen, onClose, onLogin }) => {
     };
 
     return (
-        <div className={styles.modalOverlay} onClick={handleBackgroundClick}>
+        <div className={styles.modal_overlay} onClick={handleBackgroundClick}>
             <div className={styles.modal}>
-                <h2>Log in</h2>
+                <h2 className={styles.title}>Log in</h2>
 
-                <button onClick={handleLogin}>Sign in</button>
+                <button onClick={onSignIn}>Sign in</button>
                 <button onClick={onClose}>Close</button>
             </div>
         </div>

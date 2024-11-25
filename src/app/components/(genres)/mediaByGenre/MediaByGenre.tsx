@@ -17,13 +17,13 @@ const MediaByGenre = async ({ type, genreId, currentPage }: MediaByGenreProps) =
     const media = await fetchMediaByTypeAndGenre(type, genreId, currentPage);
 
     return (
-        <>
+        <div>
             <MoviesList
                 movies={type === 'movies' ? (media.results as IMovie[]) : undefined}
                 shows={type === 'shows' ? (media.results as IShow[]) : undefined}
             />
             <Pagination currentPage={currentPage} totalPages={media.total_pages} basePath={basePath}/>
-        </>
+        </div>
 
     );
 };

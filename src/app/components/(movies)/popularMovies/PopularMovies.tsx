@@ -7,10 +7,10 @@ const PopularMovies = async () => {
 
     const popularMovies = await movieService.getPopularMovies();
     return (
-        <>
+        <div className={styles.container}>
             <h2 className={styles.title}>Popular Movies</h2>
             <MoviesList movies={popularMovies.results} />
-        </>
+        </div>
     );
 };
 

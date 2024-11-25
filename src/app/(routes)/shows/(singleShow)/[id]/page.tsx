@@ -3,13 +3,13 @@ import MediaDetails from "@/app/components/mediaDetails/MediaDetails";
 import {showService} from "@/app/services/api.shows.service";
 
 type MediaDetailsProps = {
-    params: { id: string };
+    params: Promise<{ id: string }>;
 };
 
 const MediaDetailsPage = async ({ params}: MediaDetailsProps) => {
 
-    const media = await showService.getShowById(params.id);
-
+    const { id } = await params;
+    const media = await showService.getShowById(id);
     const title =media.name;
 
     if (!media) {

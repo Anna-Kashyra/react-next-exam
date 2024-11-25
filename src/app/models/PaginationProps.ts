@@ -1,5 +1,5 @@
 export type SearchParamsProps = {
-    searchParams: { page?: string };
+    searchParams: Promise<{ page?: string }>;
 };
 
 export type AllMediasProps = {

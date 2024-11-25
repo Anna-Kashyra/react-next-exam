@@ -5,7 +5,9 @@ import {SearchParamsProps} from "@/app/models/PaginationProps";
 
 const ShowsPage = async ({ searchParams }: SearchParamsProps) => {
 
-    const currentPage = parseInt(searchParams.page || "1", 10);
+    const { page } = await searchParams;
+    const currentPage = parseInt(page || "1", 10);
+
     return (
         <>
             <h1>All TV Shows</h1>
