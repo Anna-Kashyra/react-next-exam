@@ -1,11 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import {genreService} from "@/app/services/api.genres.service";
+import {Genre, genreService} from "@/app/services/api.genres.service";
 import styles from "@/app/components/(genres)/genres/Genres.module.css";
 
-const Genres = async ({ type }: { type: 'movies' | 'shows' }) => {
+type GenresProps = {
+    type: 'movies' | 'shows';
+};
+const Genres = async ({ type }: GenresProps) => {
 
-    const genres = type === 'movies'
+    const genres: Genre[] = type === 'movies'
         ? await genreService.getMovieGenres()
         : await genreService.getShowsGenres();
 

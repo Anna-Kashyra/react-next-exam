@@ -1,4 +1,4 @@
-import React from "react";
+import React, {FC} from "react";
 import Image from "next/image";
 import { IMovie } from "@/app/models/IMovie";
 import { IShow } from "@/app/models/IShow";
@@ -14,7 +14,7 @@ const isShow = (media: IMovie | IShow): media is IShow => {
     return 'first_air_date' in media;
 };
 
-const MediaDetails = ({ media }: MediaDetailsProps) => {
+const MediaDetails: FC<MediaDetailsProps> = ({ media }: MediaDetailsProps) => {
     const title = 'title' in media ? media.title : media.name;
     const releaseDate = isShow(media) ? media.first_air_date : media.release_date;
     const imageUrl = media.poster_path

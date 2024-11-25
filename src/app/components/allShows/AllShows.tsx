@@ -1,10 +1,10 @@
-import React from "react";
+import React, {FC} from "react";
 import MoviesList from "@/app/components/(movies)/moviesList/MoviesList";
 import Pagination from "@/app/components/(navigation)/pagination/Pagination";
 import {AllMediasProps} from "@/app/models/PaginationProps";
 import {showService} from "@/app/services/api.shows.service";
 
-const AllShows = async ({ currentPage }: AllMediasProps) => {
+const AllShows: FC<AllMediasProps> = async ({ currentPage }: AllMediasProps) => {
 
     const allShows = await showService.getShows({ page: currentPage });
     return (

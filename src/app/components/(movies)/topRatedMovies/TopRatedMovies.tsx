@@ -1,9 +1,9 @@
-import React from "react";
+import React, {FC} from "react";
 import {movieService} from "@/app/services/api.movies.service";
 import MoviesList from "@/app/components/(movies)/moviesList/MoviesList";
 import styles from "@/app/components/(movies)/popularMovies/PopularMovies.module.css";
 
-const TopRatedMovies = async () => {
+const TopRatedMovies: FC = async () => {
 
     const topRatedMovies = await movieService.getTopRatedMovies();
     return (

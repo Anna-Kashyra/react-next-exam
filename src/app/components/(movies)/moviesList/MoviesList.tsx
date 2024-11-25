@@ -11,7 +11,8 @@ type MoviesListProps = {
 
 const MoviesList = ({ movies, shows }: MoviesListProps) => {
 
-    const mediaItems = [
+    type MediaItem = IMovie | IShow & { type: 'movies' | 'shows' };
+    const mediaItems: MediaItem[] = [
         ...(movies?.map((movie) => ({
             ...movie,
             type: 'movies' as const,
