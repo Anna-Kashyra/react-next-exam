@@ -25,16 +25,16 @@ Final project from the React/Next.js training course. A movie discovery app buil
 
 Clone the repository and install dependencies:
 
-\```bash
+\`bash
 git clone https://github.com/Anna-Kashyra/react-next-exam.git
 cd react-next-exam
 npm install
-\```
+\`
 
 Run the development server:
 
-\```bash
+\`bash
 npm run dev
-\```
+\`
 
 Open [http://localhost:3000](http://localhost:3000) to see the result.
