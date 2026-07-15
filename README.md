@@ -1,29 +1,36 @@
-This is a Next.js project bootstrapped with `create-next-app`
+# The Movies App
 
-# About project
+Final project from the React/Next.js training course. A movie discovery app built with Next.js and The Movies Database API.
 
-This is the final project from the training course React/Next.js.
-Tasks:
-- Create The Movies app using The Movies Database https://developers.themoviedb.org/3
-- Perform Movies List
-- Perform pagination
-- Perform routing
+🔗 **[Live Demo](https://react-next-exam.vercel.app/)**
+
+![Screenshot](./screenshot.png)
+
+## Features
+
+- Browse movies list with pagination
 - Sort movies by genre
 - Search for movies
-- Route to a separate movie page
+- View detailed information on a separate movie page
+- Client-side routing
 
-## Project location
+## Tech Stack
 
-https://github.com/Anna-Kashyra/react-next-exam.git
+- Next.js 15 (App Router)
+- React 19
+- TypeScript
+- [The Movies Database API](https://developers.themoviedb.org/3)
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository and install dependencies:
 
-```bash
-npm run dev
+`git clone https://github.com/Anna-Kashyra/react-next-exam.git
+cd react-next-exam
+npm install`
 
-```
+Run the development server:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`npm run dev`
 
+Open [http://localhost:3000](http://localhost:3000) to see the result.
