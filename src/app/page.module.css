@@ -7,11 +7,17 @@
 
 .main {
   width: 100%;
-  padding: 40px 80px;
+  max-width: 1440px;
+  padding: 160px 80px;
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  gap: 40px;
+  gap: 120px;
 }
 
-
+@media (max-width: 768px) {
+  .main {
+    padding: 80px 40px;
+    gap: 60px;
+  }
+}

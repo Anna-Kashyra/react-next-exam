@@ -16,3 +16,7 @@
 .items:hover {
     color: var(--background);
 }
+
+.items a {
+    line-height: 1;
+}
