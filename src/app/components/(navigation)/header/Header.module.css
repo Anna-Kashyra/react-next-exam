@@ -4,8 +4,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 60px;
     background-color: var(--second-color);
     font-size: 20px;
+}
+.logo_menu, .search_login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo_menu {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+.search_login {
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 .logo {
@@ -14,4 +28,27 @@
 
 .logo:hover {
     transform: scale(1.1);
+}
+@media (max-width: 1440px) {
+    .header {
+        padding: 20px 80px;
+    }
+}
+@media (max-width: 1024px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .logo_menu, .search_login {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 40px;
+    }
 }

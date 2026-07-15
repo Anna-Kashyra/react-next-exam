@@ -10,19 +10,23 @@ import styles from "@/app/components/(navigation)/header/Header.module.css";
 const Header = () => {
     return (
         <header className={styles.header}>
-            <Link href={'/'}>
-                <Image
-                    className={styles.logo}
-                    src={theBestMovies}
-                    alt="The Best Movies Logo"
-                    loading={"eager"}
-                    width={120}
-                    height={38}
-                />
-            </Link>
-            <Menu/>
-            <Search/>
-            <LoginButton/>
+            <div className={styles.logo_menu}>
+                <Link href={'/'}>
+                    <Image
+                        className={styles.logo}
+                        src={theBestMovies}
+                        alt="The Best Movies Logo"
+                        loading={"eager"}
+                        width={120}
+                        height={38}
+                    />
+                </Link>
+                <Menu/>
+            </div>            
+            <div className={styles.search_login}>
+                <Search/>
+                <LoginButton/>
+            </div>
         </header>
     );
 };
